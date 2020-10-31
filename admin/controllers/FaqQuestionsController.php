@@ -9,28 +9,29 @@ use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use himiklab\sortablegrid\SortableGridAction;
 
 /**
  * FaqQuestionsController implements the CRUD actions for FaqQuestions model.
  */
 class FaqQuestionsController extends Controller
 {
+    public function actions()
+    {
+        return [
+            'sort' => [
+                'class' => SortableGridAction::className(),
+                'modelName' => FaqQuestions::className(),
+            ],
+        ];
+    }
+    
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['index', 'update', 'create', 'delete'],
-                        'allow' => true,
-                        'roles' => $this->module->access,
-                    ],
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
