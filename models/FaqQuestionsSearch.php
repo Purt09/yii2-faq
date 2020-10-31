@@ -39,7 +39,7 @@ class FaqQuestionsSearch extends FaqQuestions
      */
     public function search($params)
     {
-        $query = FaqQuestions::find();
+        $query = FaqQuestions::find()->orderBy('sort DESC');
 
         // add conditions that should always apply here
 
