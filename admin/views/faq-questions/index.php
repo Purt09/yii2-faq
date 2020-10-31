@@ -19,9 +19,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= Html::a('Create Faq Questions', ['create'], ['class' => 'btn btn-success index-create-btn']) ?>
     <?php Pjax::begin(); ?>
 
-    <?= GridView::widget([
+    <?= \himiklab\sortablegrid\SortableGridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'sortableAction' => 'sort',
         'columns' => [
 
             'id',
