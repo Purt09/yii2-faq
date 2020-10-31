@@ -8,7 +8,8 @@
     }
   ],
   "require": {
-    "vova07/yii2-imperavi-widget": "*"
+    "vova07/yii2-imperavi-widget": "*",
+    "himiklab/yii2-sortable-grid-view-widget" : "*"
   },
   "autoload": {
     "psr-4": {
