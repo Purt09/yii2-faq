@@ -2,6 +2,8 @@
 
 namespace pantera\faq\models;
 
+use himiklab\sortablegrid\SortableGridBehavior;
+
 /**
  * This is the model class for table "faq_questions".
  *
@@ -17,6 +19,15 @@ namespace pantera\faq\models;
  */
 class FaqQuestions extends \yii\db\ActiveRecord
 {
+    public function behaviors()
+    {
+        return [
+            'sort' => [
+                'class' => SortableGridBehavior::className(),
+                'sortableAttribute' => 'sort'
+            ],
+        ];
+    }
 
     public function getStatusName()
     {
