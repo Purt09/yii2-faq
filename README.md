@@ -1,6 +1,8 @@
 # yii2-faq
 FAQ (frequently asked questions) module for Yii2
 
+UPDATE by Purt09 Доабвлен Sortable in FAQquestions
+
 
 ## Установка
 Предпочтительно через composer:
